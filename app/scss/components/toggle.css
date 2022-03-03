@@ -1,0 +1,106 @@
+@use '../util/' as *;
+.toggle {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr rem(60) 1fr;
+      grid-template-columns: 1fr rem(60) 1fr;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  border: none;
+  gap: rem(4.8) rem(8);
+  margin: 0;
+}
+
+.toggle label {
+  font-size: rem(14);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.toggle label[for='dark'] {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.toggle label[for='system'] {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.toggle label[for='light'] {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+}
+
+.toggle__wrapper {
+  position: relative;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /2;
+  height: rem(24);
+}
+
+.toggle input[type='radio'] {
+  margin: 0 rem(-2) 0 rem(-2);
+  opacity: 0;
+  width: rem(20);
+  height: rem(24);
+}
+
+.toggle input[type='radio']:hover ~ .toggle__button {
+  border: 2px solid white;
+}
+
+.toggle__background {
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  border-radius: rem(12);
+  background: linear-gradient(225deg, var(--toggle-bg-end) 0%, var(--toggle-bg-start) 98.02%);
+  pointer-events: none;
+}
+
+.toggle__button {
+  position: absolute;
+  left: rem(3);
+  top: rem(3);
+  right: 100%;
+  width: rem(18);
+  height: rem(18);
+  border-radius: 50%;
+  background-color: var(--dark-bg);
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.toggle #light:checked ~ .toggle__button {
+  left: calc(100% - 21px);
+  right: 3px;
+}
+
+.toggle #system:checked ~ .toggle__button {
+  left: 50%;
+  right: auto;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+/*# sourceMappingURL=toggle.css.map */

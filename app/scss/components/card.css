@@ -1,0 +1,86 @@
+@use '../util/' as *;
+.card {
+  background: var(--dark-card);
+  color: var(--dark-text1);
+  width: rem(255);
+  padding: rem(25);
+  border-radius: rem(5);
+  text-align: center;
+}
+
+.card--facebook {
+  border-top: rem(5) solid var(--facebook);
+}
+
+.card__platform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: rem(28);
+}
+
+.card__icon {
+  margin-right: rem(8);
+}
+
+.card__username {
+  font-size: rem(12);
+  font-weight: 700;
+}
+
+.card__followers {
+  margin-bottom: rem(25);
+}
+
+.card__count {
+  color: var(--light-bg);
+  font-weight: 700;
+  letter-spacing: rem(-2);
+  line-height: 1;
+  margin-bottom: rem(4);
+}
+
+.card__count--big {
+  font-size: rem(56);
+}
+
+.card__label {
+  font-size: rem(12);
+  letter-spacing: rem(5);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--dark-text1);
+}
+
+.card__change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: rem(12);
+  font-weight: 700;
+}
+
+.card__change--up {
+  color: var(--limegreen);
+}
+
+.card__change--down {
+  color: var(--brightred);
+}
+
+.card__change img {
+  margin-right: rem(4);
+}
+/*# sourceMappingURL=card.css.map */
